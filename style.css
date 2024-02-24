@@ -6,12 +6,20 @@ body {
     background-color: #f5f5f5;
 }
 
-h1 {
+/* h1 {
     color: #333;
     font-size: 30px;
     margin-bottom: 55px;
     display: inline-block;
     border-bottom: 2px solid #aeeeff;
+} */
+h1::after {
+    content: '';
+    display: block;
+    width: 115px;
+    height: 2px;
+    background-color: #9dd787;
+    margin: 7px auto;
 }
 
 .image-container {
@@ -19,7 +27,9 @@ h1 {
     gap: 25px;
     max-width: 699px;
     height: 1370px;
-    margin-left: 143px;
+    margin: 0 auto;
+    margin-top: 55px;
+    justify-content: center;
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -29,7 +39,6 @@ h1 {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
-    padding: 0;
     width: 320px;
     height: 311px;
 }
@@ -41,7 +50,7 @@ h1 {
 
 .image-card img {
     height: 259px;
-    object-fit: fill;
+    object-fit: cover;
     width: 100%;
 }
 
@@ -51,6 +60,19 @@ h1 {
     font-size: 14px;
 }
 
+
 .selected-card {
     background-color: #b0e7bd;
+}
+
+@media only screen and (max-width: 768px) {
+    .image-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .image-container {
+        grid-template-columns: 1fr;
+    }
 }
